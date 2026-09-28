@@ -1,0 +1,51 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <label>
+    account_name:
+    <input formControlName="account_name" type="text" />
+  </label>
+
+  <label>
+    status:
+    <input formControlName="status" type="text" />
+  </label>
+  <!-- <select formControlName="" id="">
+    <option value="">select client</option>
+    @for (item of data; track item) {
+    <option formControlName="client_id" value="{{ item.client_id }}">
+      {{ item.item.client_id }}
+    </option>
+    }
+</select> -->
+  <select formControlName="client_id" id="client_id">
+    <option value="">Select client</option>
+    <option *ngFor="let item of data" [value]="item.id">
+      {{ item.client_name }}
+    </option>
+  </select>
+  <!-- <label>
+    client_id:
+    <input formControlName="client_id	" type="text" />
+  </label> -->
+
+  <!-- <label>
+    address:
+    <input formControlName="adress" type="text" />
+  </label> -->
+
+  <!-- <label>
+    Curruancy:
+    <input formControlName="curruancy" type="number" />
+  </label> -->
+
+  <!-- <label>
+    Taxes:
+    <input formControlName="taxes" type="number" />
+  </label> -->
+  <!--
+  <label>
+    Commission:
+    <input formControlName="commission" type="number" />
+  </label> -->
+
+  <button type="submit" [disabled]="myForm.invalid">Submit</button>
+</form>

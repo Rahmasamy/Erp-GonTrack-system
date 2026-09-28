@@ -1,0 +1,23 @@
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-controls {
+  display: flex;
+}
+
+.pagination-controls button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.pagination-controls button.active {
+  background-color: #0a2e6b;
+  color: #fff;
+}

@@ -1,0 +1,35 @@
+
+<table class="clients-table">
+  <thead>
+    <tr>
+      <th><input type="checkbox" /></th>
+
+      <th>client_name</th>
+      <th>balance</th>
+      <th>total commition</th>
+      <th>with out commition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Generate rows dynamically while excluding certain keys -->
+    @for (item of data; track $index) {
+    <tr>
+      <td><input type="checkbox" /></td>
+
+      <td>
+        {{ item.client_name }}
+      </td>
+
+      <td>
+        {{ item.report.original.balance.original.balance }}
+      </td>
+      <td>
+        {{ item.report.original.getTotalDailyExpense }}
+      </td>
+      <td>
+        {{ item.report.original.getTotalDailyExpWithoutCommision }}
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>

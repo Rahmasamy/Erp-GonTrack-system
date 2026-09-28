@@ -1,0 +1,34 @@
+<!-- <a routerLink="/create-payment">create-payment</a> -->
+<!-- <app-table [data]="data"></app-table> -->
+<div class="navbar">
+  <ul class="navbar-list">
+    <li><a routerLink="all-payment">All Payments</a></li>
+    <li><a routerLink="basic-payment">Basic Payment</a></li>
+  </ul>
+</div>
+<!-- Control value: {{ myControl.value || "empty" }} -->
+
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>compgain</mat-label>
+    <input
+      #input
+      type="text"
+      placeholder="compgain name"
+      matInput
+      [formControl]="myControl"
+      [matAutocomplete]="auto"
+      (input)="filter()"
+      (focus)="filter()"
+    />
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let option of filteredOptions" [value]="option">
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+
+<ng-container *ngIf="x">
+  <router-outlet></router-outlet>
+</ng-container>

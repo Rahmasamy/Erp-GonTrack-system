@@ -1,0 +1,49 @@
+<div *ngIf="accounts.length > 0; else noAccounts">
+  <h2>Accounts with Campaigns</h2>
+  <div class="cards-container">
+    <div class="card" *ngFor="let account of accounts">
+      <div class="card-header">
+        <h3>{{ account.account_name }}</h3>
+        <!-- <span>ID: {{ account.id }}</span> -->
+      </div>
+
+      <div class="row">
+        <!-- <div class="icon">👤</div> -->
+        <div class="column">
+          <!-- <div class="header ms-4">Client ID: {{ account.client_id }}</div> -->
+          <!-- <div class="header ms-4">Client ID: {{ account.client_id }}</div> -->
+          <div>
+            Status: <span style="color: red">{{ account.status }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="campaigns">
+        <h3>Campaigns</h3>
+        <div class="campaigns-container">
+          <div class="campaign-item" *ngFor="let campaign of account.campgians">
+            <div class="campaign-details">
+              <div>{{ campaign.campagian_name }} (ID: {{ campaign.id }})</div>
+              <div>
+                Status: {{ campaign.status }} | Date:
+                {{ campaign.camp_date | date }}
+              </div>
+              <div>Account ID: {{ campaign.acount_id }}</div>
+              <div>Created At: {{ campaign.created_at | date : "short" }}</div>
+              <div>Updated At: {{ campaign.updated_at | date : "short" }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="footer">
+        <button class="select-btn">Select</button>
+        <button class="preview-btn">Preview</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<ng-template #noAccounts>
+  <p>No accounts found.</p>
+</ng-template>

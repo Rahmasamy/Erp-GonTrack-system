@@ -1,0 +1,40 @@
+.clients-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+.clients-table th,
+.clients-table td {
+  padding: 10px 15px;
+  text-align: left;
+  border: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.clients-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.clients-table td input[type="checkbox"] {
+  margin: 0;
+}
+
+.clients-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.clients-table img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.clients-table th:first-child,
+.clients-table td:first-child {
+  width: 40px;
+  text-align: center;
+}

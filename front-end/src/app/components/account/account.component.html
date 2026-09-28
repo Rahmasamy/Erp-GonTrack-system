@@ -1,0 +1,23 @@
+<a routerLink="/create-account">create-account</a>
+<div *ngIf="data.length > 0">
+  <mat-expansion-panel *ngFor="let account of data">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <a [routerLink]="['/account-details', account.id]">{{
+          account.account_name
+        }}</a>
+      </mat-panel-title>
+      <mat-panel-description>{{ account.status }}</mat-panel-description>
+    </mat-expansion-panel-header>
+    <div>
+      <!-- Only show campaigns related to the current account -->
+      <div class="add-compgin">
+        <a [routerLink]="['/create-compgain', account.id]">add compgian</a>
+      </div>
+      <div class="compagin_name" *ngFor="let campaign of account.campgians">
+        {{ campaign.campagian_name }}
+      </div>
+    </div>
+  </mat-expansion-panel>
+</div>
+<div *ngIf="data.length === 0">No accounts found.</div>

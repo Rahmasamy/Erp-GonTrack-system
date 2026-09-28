@@ -1,0 +1,38 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <label>
+    Client Name:
+    <input formControlName="client_name" type="text" />
+  </label>
+
+  <label>
+    email:
+    <input formControlName="email" type="text" />
+  </label>
+
+  <label>
+    Phone:
+    <input formControlName="phone" type="text" />
+  </label>
+
+  <label>
+    address:
+    <input formControlName="adress" type="text" />
+  </label>
+
+  <label>
+    Curruancy:
+    <input formControlName="curruancy" type="number" />
+  </label>
+
+  <label>
+    Taxes:
+    <input formControlName="taxes" type="number" />
+  </label>
+
+  <label>
+    Commission:
+    <input formControlName="commission" type="number" />
+  </label>
+
+  <button type="submit" [disabled]="myForm.invalid">Submit</button>
+</form>

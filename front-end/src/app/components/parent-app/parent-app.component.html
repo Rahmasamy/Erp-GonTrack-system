@@ -1,0 +1,14 @@
+<div class="container">
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="clients-section">
+      <app-header></app-header>
+      <app-header-bottom [title]="data"></app-header-bottom>
+
+      <!-- <app-table></app-table> -->
+      <router-outlet></router-outlet>
+    </section>
+  </main>
+</div>

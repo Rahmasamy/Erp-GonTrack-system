@@ -1,0 +1,22 @@
+.add-compgin {
+  text-align: end;
+}
+
+mat-expansion-panel-header mat-panel-title,
+mat-expansion-panel-header mat-panel-description,
+.add-compgin {
+  color: #1f0202e5 !important;
+}
+
+mat-expansion-panel {
+  background-color: #ffffff1a;
+}
+
+.add-compgin a {
+  font-weight: bold;
+  text-decoration: none;
+  color: green;
+}
+.compagin_name {
+  color: #1f0202e5 !important;
+}

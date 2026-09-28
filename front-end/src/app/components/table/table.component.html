@@ -1,0 +1,24 @@
+<table class="clients-table">
+  <thead>
+    <tr>
+      <th><input type="checkbox" /></th>
+      <!-- Dynamically generate headers excluding specific keys -->
+      <ng-container *ngFor="let item of (data[0] | keyvalue); let i = index">
+        <th *ngIf="item.key !== 'created_at' && item.key !== 'updated_at'">
+          {{ item.key }}
+        </th>
+      </ng-container>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Generate rows dynamically while excluding certain keys -->
+    <tr *ngFor="let item of data; let i = index">
+      <td><input type="checkbox" /></td>
+      <ng-container *ngFor="let field of item | keyvalue">
+        <td *ngIf="field.key !== 'created_at' && field.key !== 'updated_at'">
+          {{ field.value }}
+        </td>
+      </ng-container>
+    </tr>
+  </tbody>
+</table>
